@@ -24,7 +24,7 @@ resource datafactoryDestination 'Microsoft.DataFactory/factories@2018-06-01' exi
   scope: resourceGroup(datafactoryDestinationSubscriptionId, datafactoryDestinationResourceGroup)
 }
 
-resource datafactoryRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
+resource datafactoryRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(uniqueString(datafactorySource.id, datafactoryDestination.id))
   scope: datafactorySource
   properties: {

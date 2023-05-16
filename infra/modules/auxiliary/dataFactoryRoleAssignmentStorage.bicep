@@ -25,7 +25,7 @@ resource datafactory 'Microsoft.DataFactory/factories@2018-06-01' existing = {
   scope: resourceGroup(datafactorySubscriptionId, datafactoryResourceGroupName)
 }
 
-resource synapseRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
+resource storageRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(uniqueString(storageAccountFileSystem.id, datafactory.id))
   scope: storageAccountFileSystem
   properties: {

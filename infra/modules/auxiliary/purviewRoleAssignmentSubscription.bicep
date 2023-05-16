@@ -27,7 +27,7 @@ resource purview 'Microsoft.Purview/accounts@2021-07-01' existing = {
   scope: resourceGroup(purviewSubscriptionId, purviewResourceGroupName)
 }
 
-resource synapseRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
+resource subscriptionRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(uniqueString(subscription().subscriptionId, purview.id, roles[role]))
   scope: subscription()
   properties: {

@@ -25,7 +25,7 @@ resource synapse 'Microsoft.Synapse/workspaces@2021-03-01' existing = {
   scope: resourceGroup(synapseSubscriptionId, synapseResourceGroupName)
 }
 
-resource synapseRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-04-01-preview' = {
+resource storageRoleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(uniqueString(storageAccountFileSystem.id, synapse.id))
   scope: storageAccountFileSystem
   properties: {
